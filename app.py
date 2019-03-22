@@ -2,8 +2,6 @@ from flask import Flask, render_template,request,url_for
 from weatherScrape import scrape
 import datetime
 
-now = datetime.datetime.now()
-
 app = Flask(__name__)
 
 @app.route('/')
