@@ -2,9 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 
 def scrape(city):
-	URL = "https://www.weather-forecast.com/locations/"
-	city = '-'.join(city.split())
-	URL+=city
+	city = city.replace(' ','-')
+	URL="https://www.weather-forecast.com/locations/"+city
 	webpage = requests.get(URL)
 	if webpage.status_code==requests.codes.ok:
 		print("Connected")
