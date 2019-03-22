@@ -8,11 +8,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-	return render_template('weatherPage.html',city="",date="",currentClimate = "")
+	return render_template('weatherPage.html',city="",currentClimate = "")
 
 @app.route('/', methods=['POST'])
 def my_form_post():
 	text = request.form['text']
-	return render_template('weatherPage.html',city=text,date=now.strftime("%Y-%m-%d %H:%M"),currentClimate=scrape(text))
+	return render_template('weatherPage.html',city=text,currentClimate=scrape(text))
 
 app.run()
